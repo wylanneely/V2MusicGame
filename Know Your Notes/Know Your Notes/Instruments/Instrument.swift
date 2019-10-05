@@ -11,7 +11,17 @@ import AVFoundation
 
 
 
-struct Instrument {
+struct Instrument:Equatable {
+    
+    
+   
+    
+    static func == (lhs: Instrument, rhs: Instrument) -> Bool {
+      return  lhs.name == rhs.name
+    }
+    
+    
+    
     
     let name: String
     let notes: [Note]

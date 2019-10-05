@@ -9,6 +9,8 @@
 import UIKit
 
 class GamePlayViewController: UIViewController {
+    
+    var settingsController = SettingsController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,8 +19,16 @@ class GamePlayViewController: UIViewController {
     }
     
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+       if segue.destination is SettingsViewController
+        {
+            let vc = segue.destination as? SettingsViewController
+            vc?.settingsController = self.settingsController
+        }
 
-    
+    }
+
+    @IBAction func unwindToVC1(segue:UIStoryboardSegue) { }
+
 
 }

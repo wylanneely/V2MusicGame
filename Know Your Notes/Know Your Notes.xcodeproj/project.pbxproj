@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E913873C2341BBF300C4227D /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = E913873B2341BBF300C4227D /* Sounds */; };
-		E91387402341F74F00C4227D /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E913873F2341F74F00C4227D /* GameController.swift */; };
+		E91387402341F74F00C4227D /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E913873F2341F74F00C4227D /* SettingsController.swift */; };
 		E9138748234231AD00C4227D /* GamePlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9138747234231AD00C4227D /* GamePlayViewController.swift */; };
 		E9662D5A233C76DC00E4E471 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9662D59233C76DC00E4E471 /* AppDelegate.swift */; };
 		E9662D5C233C76DC00E4E471 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9662D5B233C76DC00E4E471 /* SceneDelegate.swift */; };
@@ -24,6 +24,9 @@
 		E9D0333F23423A2B00F4681F /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9D0333E23423A2B00F4681F /* Color.xcassets */; };
 		E9D0334123423AE000F4681F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D0334023423AE000F4681F /* SettingsViewController.swift */; };
 		E9D03343234396EA00F4681F /* GlobalAppHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D03342234396EA00F4681F /* GlobalAppHandler.swift */; };
+		E9D033452344D88A00F4681F /* NoteButtonsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9D033442344D88A00F4681F /* NoteButtonsView.xib */; };
+		E9E73B0B2348870A007A4FAC /* NumbersExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E73B0A2348870A007A4FAC /* NumbersExtensions.swift */; };
+		E9E73B0D234896D8007A4FAC /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E73B0C234896D8007A4FAC /* ArrayExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +48,7 @@
 
 /* Begin PBXFileReference section */
 		E913873B2341BBF300C4227D /* Sounds */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = folder; name = Sounds; path = "Know Your Notes/Instruments/Sounds"; sourceTree = SOURCE_ROOT; };
-		E913873F2341F74F00C4227D /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
+		E913873F2341F74F00C4227D /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		E9138747234231AD00C4227D /* GamePlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayViewController.swift; sourceTree = "<group>"; };
 		E9662D56233C76DC00E4E471 /* Know Your Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Know Your Notes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9662D59233C76DC00E4E471 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +70,9 @@
 		E9D0333E23423A2B00F4681F /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		E9D0334023423AE000F4681F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E9D03342234396EA00F4681F /* GlobalAppHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalAppHandler.swift; sourceTree = "<group>"; };
+		E9D033442344D88A00F4681F /* NoteButtonsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteButtonsView.xib; sourceTree = "<group>"; };
+		E9E73B0A2348870A007A4FAC /* NumbersExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersExtensions.swift; sourceTree = "<group>"; };
+		E9E73B0C234896D8007A4FAC /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +103,6 @@
 		E91387412341FB1700C4227D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E913873F2341F74F00C4227D /* GameController.swift */,
 				E9662D8C233C7A2500E4E471 /* GameSettings.swift */,
 				E9D03342234396EA00F4681F /* GlobalAppHandler.swift */,
 			);
@@ -109,6 +114,7 @@
 			children = (
 				E9138747234231AD00C4227D /* GamePlayViewController.swift */,
 				E9D0334023423AE000F4681F /* SettingsViewController.swift */,
+				E9D033442344D88A00F4681F /* NoteButtonsView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -138,14 +144,16 @@
 			children = (
 				E9D0333C23423A2100F4681F /* Assets.xcassets */,
 				E9662D5F233C76DC00E4E471 /* Main.storyboard */,
-				E91387462342313700C4227D /* Views */,
-				E91387412341FB1700C4227D /* Models */,
 				E9662D92233C80E000E4E471 /* Instruments */,
+				E91387462342313700C4227D /* Views */,
+				E9B0EA0C234850AA006E598B /* ModelControllers */,
+				E91387412341FB1700C4227D /* Models */,
 				E9662D59233C76DC00E4E471 /* AppDelegate.swift */,
 				E9662D5B233C76DC00E4E471 /* SceneDelegate.swift */,
 				E9662D67233C76DE00E4E471 /* LaunchScreen.storyboard */,
 				E9662D6A233C76DE00E4E471 /* Info.plist */,
 				E9662D62233C76DC00E4E471 /* Know_Your_Notes.xcdatamodeld */,
+				E9E73B09234886E6007A4FAC /* Extensions */,
 				E9D0333E23423A2B00F4681F /* Color.xcassets */,
 			);
 			path = "Know Your Notes";
@@ -177,6 +185,23 @@
 				E9662D90233C7B0100E4E471 /* Note.swift */,
 			);
 			path = Instruments;
+			sourceTree = "<group>";
+		};
+		E9B0EA0C234850AA006E598B /* ModelControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E913873F2341F74F00C4227D /* SettingsController.swift */,
+			);
+			path = ModelControllers;
+			sourceTree = "<group>";
+		};
+		E9E73B09234886E6007A4FAC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E9E73B0A2348870A007A4FAC /* NumbersExtensions.swift */,
+				E9E73B0C234896D8007A4FAC /* ArrayExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,6 +310,7 @@
 			files = (
 				E9662D69233C76DE00E4E471 /* LaunchScreen.storyboard in Resources */,
 				E913873C2341BBF300C4227D /* Sounds in Resources */,
+				E9D033452344D88A00F4681F /* NoteButtonsView.xib in Resources */,
 				E9D0333F23423A2B00F4681F /* Color.xcassets in Resources */,
 				E9D0333D23423A2100F4681F /* Assets.xcassets in Resources */,
 				E9662D61233C76DC00E4E471 /* Main.storyboard in Resources */,
@@ -312,7 +338,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E91387402341F74F00C4227D /* GameController.swift in Sources */,
+				E91387402341F74F00C4227D /* SettingsController.swift in Sources */,
 				E9662D91233C7B0100E4E471 /* Note.swift in Sources */,
 				E9662D64233C76DC00E4E471 /* Know_Your_Notes.xcdatamodeld in Sources */,
 				E9D03343234396EA00F4681F /* GlobalAppHandler.swift in Sources */,
@@ -321,7 +347,9 @@
 				E9662D8F233C7A5700E4E471 /* Instrument.swift in Sources */,
 				E9138748234231AD00C4227D /* GamePlayViewController.swift in Sources */,
 				E9662D5C233C76DC00E4E471 /* SceneDelegate.swift in Sources */,
+				E9E73B0D234896D8007A4FAC /* ArrayExtensions.swift in Sources */,
 				E9D0334123423AE000F4681F /* SettingsViewController.swift in Sources */,
+				E9E73B0B2348870A007A4FAC /* NumbersExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
