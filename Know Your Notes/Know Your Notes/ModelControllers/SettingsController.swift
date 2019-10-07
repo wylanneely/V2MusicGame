@@ -20,7 +20,6 @@ class SettingsController {
 }
 
 
-
 public class NoteAssistant: Comparable {
     
     let note: String
@@ -48,6 +47,9 @@ public class NoteAssistant: Comparable {
     public static func == (lhs: NoteAssistant, rhs: NoteAssistant) -> Bool {
         return  lhs.tag == rhs.tag
     }
+    
 }
+
+
 
 

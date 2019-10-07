@@ -9,42 +9,65 @@
 import UIKit
 
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: UIViewController{
+    
+//MARK: Properties
+    
     
     
     
     var settingsController: SettingsController!
-        
-    func updateCurrentSettings() {
-//        currentGameSettings.numberOfNotes = self.numberOfNotes
-//        currentGameSettings.numberOfSkips = self.numberOfSkips
-//        currentGameSettings.numberOfLifes = self.numberOfLifes
-//        currentGameSettings.difficulty = self.difficulty
-//        currentGameSettings.instrument = self.instrument
-    }
     
     var difficulty: Difficulty = .regular
     var numberOfNotes: Int = 4
     var numberOfLifes: Int = 10
     var numberOfSkips: Int = 10
     var noteAssistants: [NoteAssistant] = []
+    var selectedNotesIndexesForGameSession: [Int] = []
+    var oldGameSettings: GameSettings? = nil
+    var newGameSettings: GameSettings {
+        return GameSettings(difficulty: self.difficulty, selectedNoteIndexes: self.selectedNotesIndexesForGameSession ,lifes: self.numberOfLifes, skipOk: true, skips: self.numberOfSkips, repeatsOk: true, numberOfNotes: self.numberOfNotes)
+    }
+    
+    var delegate: GameSettingsDelegate?
+
     
     lazy var noteButtons: [UIButton] = [aButton,bFButton,bButton,cSButton,
                                         cButton,dButton,eBButton,eButton,
                                         fSButton,fButton,gSButton,gButton]
     
     
-    var selectedNotesIndexesForGameSession: [Int] = []
     
+   
+    
+    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+            
+        return true
+    }
+    
+ 
+    var hasChanged: Bool {
+        return oldGameSettings != newGameSettings
+    }
+   
+    
+    
+    
+
     
     //MARK: View LifeCycles
     override func viewDidLoad() {
         super.viewDidLoad()
         setupStepperControllers()
-        setUpReg()
+        
+        self.oldGameSettings = settingsController.gameSettings
+        
+        matchViewsToOldSettings(settingsController.gameSettings)
     }
     
-    func matchViewsToSettings(settings: GameSettings){
+    
+    
+    func matchViewsToOldSettings(_ settings: GameSettings){
         let settings = self.settingsController.gameSettings
         //            self.currentGameSettings = settings
         self.difficulty = settings.difficulty
@@ -68,13 +91,14 @@ class SettingsViewController: UIViewController {
                     self.lifesStepper.value = settings.numberOfLifes.double()
                     self.skipsNumberStepper.value = settings.numberOfSkips.double()
                     self.setDifficultyControllerUI(difficulty: settings.difficulty)
-                } } }
-        
-        
+                } }
+        }
     }
     
-    
-    
+    override func viewWillDisappear(_ animated: Bool) {
+        delete(self.newGameSettings)
+        
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -114,9 +138,7 @@ class SettingsViewController: UIViewController {
 //    {
 //        didSet { difficultySegmentController.selectedSegmentIndex = self.difficultySegmentedControlIndex }
 //     }
-    
-
-    //MARK: View Functions
+//MARK: ViewFunctions:
     
     func setupStepperControllers()
       {  skipsNumberStepper.maximumValue = 30
@@ -128,9 +150,10 @@ class SettingsViewController: UIViewController {
     
     func updateGameSettings(completion: (_ success: Bool) -> Void)
       {
-        let newSettings = GameSettings(difficulty: self.difficulty, notesAssist: self.noteAssistants, lifes: self.numberOfLifes, skipOk: true, skips: self.numberOfSkips, repeatsOk: true, numberOfNotes: self.numberOfNotes)
+        let newSettings = GameSettings(difficulty: self.difficulty, lifes: self.numberOfLifes, skipOk: true, skips: self.numberOfSkips, repeatsOk: true, numberOfNotes: self.numberOfNotes)
         
         self.settingsController.gameSettings = newSettings
+        updateBarButtonItems()
         completion(true)
      }
 
@@ -155,6 +178,7 @@ class SettingsViewController: UIViewController {
           }
   
         }
+        updateBarButtonItems()
         
         
     }
@@ -170,6 +194,7 @@ class SettingsViewController: UIViewController {
         let gNote = NoteAssistant(note: "g", tag: 10, isEnabled: true)
         
         let notes = [0,2,3,5,7,8,10]
+        
         self.selectedNotesIndexesForGameSession = notes
         
         let newNoteAssistant = self.settingsController.gameSettings.returnNewNoteAssistants(with: [aNote,bNote,cNote,dNote,eNote,fNote,gNote])
@@ -191,6 +216,7 @@ class SettingsViewController: UIViewController {
                 self.difficultySegmentController.selectedSegmentIndex = 1
             }
         }
+        updateBarButtonItems()
     }
     
     func setUpHard()
@@ -228,6 +254,7 @@ class SettingsViewController: UIViewController {
                 self.difficultySegmentController.selectedSegmentIndex = 2
             }
         }
+        updateBarButtonItems()
      }
     
     //MARK:Custom Setup
@@ -240,6 +267,7 @@ class SettingsViewController: UIViewController {
             DispatchQueue.main.async {
                 self.lifesStepper.value = Double(numberOfLifes)
                 self.lifesLabel.text = "\(numberOfLifes)"
+                self.updateBarButtonItems()
         }
     }
     
@@ -251,6 +279,7 @@ class SettingsViewController: UIViewController {
             DispatchQueue.main.async {
                 self.skipsNumberStepper.value = Double(NumberOfSkips)
                 self.skipsLabel.text = "\(NumberOfSkips)"
+                self.updateBarButtonItems()
         }
     }
     
@@ -275,7 +304,9 @@ class SettingsViewController: UIViewController {
                     self.noteAmountStepper.value = Double(number)
                     self.noteAmountLabel.text = "\(number)"
                     self.numberOfNotes = number
-                } } }
+                } }
+            updateBarButtonItems()
+        }
     }
     
     func customSetNotesAssistants(number: Int, completion: (_ completion: [NoteAssistant]) -> Void)  {
@@ -416,229 +447,8 @@ class SettingsViewController: UIViewController {
         default:
             completion([aNote,bBNote,bNote,cNote,cSNote,dNote,eBNote,eNote,fNote,fSNote,gNote,gSNote])
         }
+        updateBarButtonItems()
 }
-//               var buttonTag = 0
-//
-//        if number <= 7 {
-//            while buttonTag <= 11 {
-//                switch buttonTag {
-//                case 0: let aNote = NoteAssistant(note: "a", tag: 0, isEnabled: true)
-//                newNoteAssistants.append(aNote)
-//                    buttonTag += 1
-//                case 2: let bNote = NoteAssistant(note: "b", tag: 2, isEnabled: true)
-//                    newNoteAssistants.append(bNote)
-//                        buttonTag += 1
-//                case 3: let cNote = NoteAssistant(note: "c", tag: 3, isEnabled: true)
-//                    newNoteAssistants.append(cNote)
-//                        buttonTag += 1
-//                case 5: let dNote = NoteAssistant(note: "d", tag: 5, isEnabled: true)
-//                    newNoteAssistants.append(dNote)
-//                        buttonTag += 1
-//                case 7: let eNote = NoteAssistant(note: "e", tag: 7, isEnabled: true)
-//                    newNoteAssistants.append(eNote)
-//                        buttonTag += 1
-//                case 8: let fNote = NoteAssistant(note: "f", tag: 8, isEnabled: true)
-//                    newNoteAssistants.append(fNote)
-//                        buttonTag += 1
-//                case 10: let gNote = NoteAssistant(note: "g", tag: 10, isEnabled: true)
-//                    newNoteAssistants.append(gNote)
-//                        buttonTag += 1
-//                default: let disabledNote = NoteAssistant(note: "none", tag: buttonTag, isEnabled: false)
-//                    newNoteAssistants.append(disabledNote)
-//                        buttonTag += 1
-//                }
-//            }
-//        } else if number == 8 {
-//                while buttonTag <= 11 {
-//                    switch buttonTag {
-//                    case 0: let aNote = NoteAssistant(note: "a", tag: 0, isEnabled: true)
-//                    newNoteAssistants.append(aNote)
-//                        buttonTag += 1
-//                    case 1: let bNote = NoteAssistant(note: "bB", tag: 1, isEnabled: true)
-//                        newNoteAssistants.append(bNote)
-//                            buttonTag += 1
-//                    case 2: let bNote = NoteAssistant(note: "b", tag: 2, isEnabled: true)
-//                        newNoteAssistants.append(bNote)
-//                            buttonTag += 1
-//                    case 3: let cNote = NoteAssistant(note: "c", tag: 3, isEnabled: true)
-//                        newNoteAssistants.append(cNote)
-//                            buttonTag += 1
-//                    case 5: let dNote = NoteAssistant(note: "d", tag: 5, isEnabled: true)
-//                        newNoteAssistants.append(dNote)
-//                            buttonTag += 1
-//                    case 7: let eNote = NoteAssistant(note: "e", tag: 7, isEnabled: true)
-//                        newNoteAssistants.append(eNote)
-//                            buttonTag += 1
-//                    case 8: let fNote = NoteAssistant(note: "f", tag: 8, isEnabled: true)
-//                        newNoteAssistants.append(fNote)
-//                            buttonTag += 1
-//                    case 10: let gNote = NoteAssistant(note: "g", tag: 10, isEnabled: true)
-//                        newNoteAssistants.append(gNote)
-//                            buttonTag += 1
-//                    default: let disabledNote = NoteAssistant(note: "none", tag: buttonTag, isEnabled: false)
-//                        newNoteAssistants.append(disabledNote)
-//                            buttonTag += 1
-//                    }
-//            }
-//        } else if number == 9 {
-//                while buttonTag <= 11 {
-//                    switch buttonTag {
-//                    case 0: let aNote = NoteAssistant(note: "a", tag: 0, isEnabled: true)
-//                    newNoteAssistants.append(aNote)
-//                        buttonTag += 1
-//                    case 1: let bNote = NoteAssistant(note: "bB", tag: 1, isEnabled: true)
-//                        newNoteAssistants.append(bNote)
-//                            buttonTag += 1
-//                    case 2: let bNote = NoteAssistant(note: "b", tag: 2, isEnabled: true)
-//                        newNoteAssistants.append(bNote)
-//                            buttonTag += 1
-//                    case 3: let cNote = NoteAssistant(note: "c", tag: 3, isEnabled: true)
-//                        newNoteAssistants.append(cNote)
-//                            buttonTag += 1
-//                    case 4: let cNote = NoteAssistant(note: "cS", tag: 4, isEnabled: true)
-//                        newNoteAssistants.append(cNote)
-//                            buttonTag += 1
-//                    case 5: let dNote = NoteAssistant(note: "d", tag: 5, isEnabled: true)
-//                        newNoteAssistants.append(dNote)
-//                            buttonTag += 1
-//                    case 7: let eNote = NoteAssistant(note: "e", tag: 7, isEnabled: true)
-//                        newNoteAssistants.append(eNote)
-//                            buttonTag += 1
-//                    case 8: let fNote = NoteAssistant(note: "f", tag: 8, isEnabled: true)
-//                        newNoteAssistants.append(fNote)
-//                            buttonTag += 1
-//                    case 10: let gNote = NoteAssistant(note: "g", tag: 10, isEnabled: true)
-//                        newNoteAssistants.append(gNote)
-//                            buttonTag += 1
-//                    default: let disabledNote = NoteAssistant(note: "none", tag: buttonTag, isEnabled: false)
-//                        newNoteAssistants.append(disabledNote)
-//                            buttonTag += 1
-//                    }
-//            }
-//        } else if number == 10 {
-//                while buttonTag <= 11 {
-//                    switch buttonTag {
-//                    case 0: let aNote = NoteAssistant(note: "a", tag: 0, isEnabled: true)
-//                    newNoteAssistants.append(aNote)
-//                        buttonTag += 1
-//                    case 1: let bNote = NoteAssistant(note: "bB", tag: 1, isEnabled: true)
-//                        newNoteAssistants.append(bNote)
-//                            buttonTag += 1
-//                    case 2: let bNote = NoteAssistant(note: "b", tag: 2, isEnabled: true)
-//                        newNoteAssistants.append(bNote)
-//                            buttonTag += 1
-//                    case 3: let cNote = NoteAssistant(note: "c", tag: 3, isEnabled: true)
-//                        newNoteAssistants.append(cNote)
-//                            buttonTag += 1
-//                    case 4: let cNote = NoteAssistant(note: "cS", tag: 4, isEnabled: true)
-//                        newNoteAssistants.append(cNote)
-//                            buttonTag += 1
-//                    case 5: let dNote = NoteAssistant(note: "d", tag: 5, isEnabled: true)
-//                        newNoteAssistants.append(dNote)
-//                            buttonTag += 1
-//                    case 6: let cNote = NoteAssistant(note: "eB", tag: 6, isEnabled: true)
-//                        newNoteAssistants.append(cNote)
-//                            buttonTag += 1
-//                    case 7: let eNote = NoteAssistant(note: "e", tag: 7, isEnabled: true)
-//                        newNoteAssistants.append(eNote)
-//                            buttonTag += 1
-//                    case 8: let fNote = NoteAssistant(note: "f", tag: 8, isEnabled: true)
-//                        newNoteAssistants.append(fNote)
-//                            buttonTag += 1
-//                    case 10: let gNote = NoteAssistant(note: "g", tag: 10, isEnabled: true)
-//                        newNoteAssistants.append(gNote)
-//                            buttonTag += 1
-//                    default: let disabledNote = NoteAssistant(note: "none", tag: buttonTag, isEnabled: false)
-//                        newNoteAssistants.append(disabledNote)
-//                            buttonTag += 1
-//                    }
-//            }
-//        } else if number == 11 {
-//                while buttonTag <= 11 {
-//                    switch buttonTag {
-//                    case 0: let aNote = NoteAssistant(note: "a", tag: 0, isEnabled: true)
-//                    newNoteAssistants.append(aNote)
-//                        buttonTag += 1
-//                    case 1: let bNote = NoteAssistant(note: "bB", tag: 1, isEnabled: true)
-//                        newNoteAssistants.append(bNote)
-//                            buttonTag += 1
-//                    case 2: let bNote = NoteAssistant(note: "b", tag: 2, isEnabled: true)
-//                        newNoteAssistants.append(bNote)
-//                            buttonTag += 1
-//                    case 3: let cNote = NoteAssistant(note: "c", tag: 3, isEnabled: true)
-//                        newNoteAssistants.append(cNote)
-//                            buttonTag += 1
-//                    case 4: let cNote = NoteAssistant(note: "cS", tag: 4, isEnabled: true)
-//                        newNoteAssistants.append(cNote)
-//                            buttonTag += 1
-//                    case 5: let dNote = NoteAssistant(note: "d", tag: 5, isEnabled: true)
-//                        newNoteAssistants.append(dNote)
-//                            buttonTag += 1
-//                    case 6: let cNote = NoteAssistant(note: "eB", tag: 6, isEnabled: true)
-//                        newNoteAssistants.append(cNote)
-//                            buttonTag += 1
-//                    case 7: let eNote = NoteAssistant(note: "e", tag: 7, isEnabled: true)
-//                        newNoteAssistants.append(eNote)
-//                            buttonTag += 1
-//                    case 8: let fNote = NoteAssistant(note: "f", tag: 8, isEnabled: true)
-//                        newNoteAssistants.append(fNote)
-//                            buttonTag += 1
-//                    case 9: let fNote = NoteAssistant(note: "fS", tag: 9, isEnabled: true)
-//                        newNoteAssistants.append(fNote)
-//                            buttonTag += 1
-//                    case 10: let gNote = NoteAssistant(note: "g", tag: 10, isEnabled: true)
-//                        newNoteAssistants.append(gNote)
-//                            buttonTag += 1
-//                    default: let disabledNote = NoteAssistant(note: "none", tag: buttonTag, isEnabled: false)
-//                        newNoteAssistants.append(disabledNote)
-//                            buttonTag += 1
-//                    }
-//            }
-//        } else if number == 12 {
-//                while buttonTag <= 11 {
-//                    switch buttonTag {
-//                    case 0: let aNote = NoteAssistant(note: "a", tag: 0, isEnabled: true)
-//                    newNoteAssistants.append(aNote)
-//                        buttonTag += 1
-//                    case 1: let bNote = NoteAssistant(note: "bB", tag: 1, isEnabled: true)
-//                        newNoteAssistants.append(bNote)
-//                            buttonTag += 1
-//                    case 2: let bNote = NoteAssistant(note: "b", tag: 2, isEnabled: true)
-//                        newNoteAssistants.append(bNote)
-//                            buttonTag += 1
-//                    case 3: let cNote = NoteAssistant(note: "c", tag: 3, isEnabled: true)
-//                        newNoteAssistants.append(cNote)
-//                            buttonTag += 1
-//                    case 4: let cNote = NoteAssistant(note: "cS", tag: 4, isEnabled: true)
-//                        newNoteAssistants.append(cNote)
-//                            buttonTag += 1
-//                    case 5: let dNote = NoteAssistant(note: "d", tag: 5, isEnabled: true)
-//                        newNoteAssistants.append(dNote)
-//                            buttonTag += 1
-//                    case 6: let cNote = NoteAssistant(note: "eB", tag: 6, isEnabled: true)
-//                        newNoteAssistants.append(cNote)
-//                            buttonTag += 1
-//                    case 7: let eNote = NoteAssistant(note: "e", tag: 7, isEnabled: true)
-//                        newNoteAssistants.append(eNote)
-//                            buttonTag += 1
-//                    case 8: let fNote = NoteAssistant(note: "f", tag: 8, isEnabled: true)
-//                        newNoteAssistants.append(fNote)
-//                            buttonTag += 1
-//                    case 9: let fNote = NoteAssistant(note: "fS", tag: 9, isEnabled: true)
-//                        newNoteAssistants.append(fNote)
-//                            buttonTag += 1
-//                    case 10: let gNote = NoteAssistant(note: "g", tag: 10, isEnabled: true)
-//                        newNoteAssistants.append(gNote)
-//                            buttonTag += 1
-//                    case 11: let gNote = NoteAssistant(note: "gS", tag: 11, isEnabled: true)
-//                    newNoteAssistants.append(gNote)
-//                        buttonTag += 1
-//                    default: let disabledNote = NoteAssistant(note: "none", tag: buttonTag, isEnabled: false)
-//                        newNoteAssistants.append(disabledNote)
-//                            buttonTag += 1
-//                    }
-//            }
-//        }
     
     func customDefaultSetUp()
     {
@@ -670,6 +480,7 @@ class SettingsViewController: UIViewController {
                 self.skipsLabel.text = "10"
                 self.noteAmountLabel.text = "8"
                 self.difficultySegmentController.selectedSegmentIndex = 3
+                self.updateBarButtonItems()
             }
         }
     }
@@ -687,8 +498,9 @@ class SettingsViewController: UIViewController {
             DispatchQueue.main.async {
                 oldButton?.isEnabled = false
                 newButton?.isEnabled = true
+                self.updateBarButtonItems()
             }
-            
+
         }
   
     }
@@ -717,6 +529,7 @@ class SettingsViewController: UIViewController {
                 self.lifesLabel.text = self.numberOfLifes.description
                 self.skipsLabel.text =  self.numberOfSkips.description
                 self.noteAmountLabel.text =  self.numberOfNotes.description
+                self.updateBarButtonItems()
             }
         }
     
@@ -725,8 +538,10 @@ class SettingsViewController: UIViewController {
         if difficultySegmentController.selectedSegmentIndex < 3 {
             self.customSetUpWithNotes(number: notesNumber)
             self.difficultySegmentController.selectedSegmentIndex = 3
+            updateBarButtonItems()
         } else {
             self.customSetUpWithNotes(number: notesNumber)
+            updateBarButtonItems()
         }
     }
     
@@ -810,18 +625,22 @@ class SettingsViewController: UIViewController {
         case 0:
             self.difficulty = .easy
                 self.setUpEasy()
+            updateBarButtonItems()
             
         case 1:
             self.difficulty = .regular
                 self.setUpReg()
+            updateBarButtonItems()
             
         case 2:
             self.difficulty = .hard
                 self.setUpHard()
+            updateBarButtonItems()
             
         case 3:
             self.difficulty = .custom
             self.customDefaultSetUp()
+            updateBarButtonItems()
         default:
             break
         }
@@ -831,16 +650,19 @@ class SettingsViewController: UIViewController {
         let newNotesValue = Int(sender.value)
         noteAmountLabel.text = "\(newNotesValue)"
         customSetUpWithNotes(number: newNotesValue)
+        updateBarButtonItems()
     }
 
     @IBAction func skipsNumberChanged(_ sender: UIStepper) {
         let skipsNumber = Int(sender.value)
         customSetUpWithSkips(number: skipsNumber)
+        updateBarButtonItems()
     }
     
     @IBAction func lifesNumberChanged(_ sender: UIStepper) {
         let lifesNumber = Int(sender.value)
         customSetUpWithLifes(number: lifesNumber)
+        updateBarButtonItems()
     }
     
       //MARK: Note Buttons Functions
@@ -852,6 +674,7 @@ class SettingsViewController: UIViewController {
         } else {
                 self.updateSelectedButtonsIndexes(newButtonTag: 0) { (success) in
                     if success == true {
+                        updateBarButtonItems()
                     self.updateButtonStatesUsingSelectedNoteIndexes()
                     }
             }
@@ -864,6 +687,7 @@ class SettingsViewController: UIViewController {
            } else {
                    self.updateSelectedButtonsIndexes(newButtonTag: 1) { (success) in
                        if success == true {
+                        updateBarButtonItems()
                        self.updateButtonStatesUsingSelectedNoteIndexes()
                        }
                }
@@ -877,6 +701,7 @@ class SettingsViewController: UIViewController {
         } else {
                 self.updateSelectedButtonsIndexes(newButtonTag: 2) { (success) in
                     if success == true {
+                        updateBarButtonItems()
                     self.updateButtonStatesUsingSelectedNoteIndexes()
                     }
             }
@@ -889,6 +714,7 @@ class SettingsViewController: UIViewController {
         } else {
                 self.updateSelectedButtonsIndexes(newButtonTag: 3) { (success) in
                     if success == true {
+                        updateBarButtonItems()
                     self.updateButtonStatesUsingSelectedNoteIndexes()
                     }
             }
@@ -901,6 +727,7 @@ class SettingsViewController: UIViewController {
            } else {
                    self.updateSelectedButtonsIndexes(newButtonTag: 4) { (success) in
                        if success == true {
+                        updateBarButtonItems()
                        self.updateButtonStatesUsingSelectedNoteIndexes()
                        }
                }
@@ -914,6 +741,7 @@ class SettingsViewController: UIViewController {
            } else {
                    self.updateSelectedButtonsIndexes(newButtonTag: 5) { (success) in
                        if success == true {
+                        updateBarButtonItems()
                        self.updateButtonStatesUsingSelectedNoteIndexes()
                        }
                }
@@ -926,6 +754,7 @@ class SettingsViewController: UIViewController {
            } else {
                    self.updateSelectedButtonsIndexes(newButtonTag: 6) { (success) in
                        if success == true {
+                        updateBarButtonItems()
                        self.updateButtonStatesUsingSelectedNoteIndexes()
                        }
                }
@@ -938,6 +767,7 @@ class SettingsViewController: UIViewController {
            } else {
                    self.updateSelectedButtonsIndexes(newButtonTag: 7) { (success) in
                        if success == true {
+                        updateBarButtonItems()
                        self.updateButtonStatesUsingSelectedNoteIndexes()
                        }
                }
@@ -950,6 +780,7 @@ class SettingsViewController: UIViewController {
            } else {
                    self.updateSelectedButtonsIndexes(newButtonTag: 8) { (success) in
                        if success == true {
+                        updateBarButtonItems()
                        self.updateButtonStatesUsingSelectedNoteIndexes()
                        }
                }
@@ -962,6 +793,7 @@ class SettingsViewController: UIViewController {
         } else {
                 self.updateSelectedButtonsIndexes(newButtonTag: 9) { (success) in
                     if success == true {
+                        updateBarButtonItems()
                     self.updateButtonStatesUsingSelectedNoteIndexes()
                     }
             }
@@ -974,6 +806,7 @@ class SettingsViewController: UIViewController {
            } else {
                    self.updateSelectedButtonsIndexes(newButtonTag: 10) { (success) in
                        if success == true {
+                        updateBarButtonItems()
                        self.updateButtonStatesUsingSelectedNoteIndexes()
                        }
                }
@@ -987,6 +820,7 @@ class SettingsViewController: UIViewController {
         } else {
                 self.updateSelectedButtonsIndexes(newButtonTag: 11) { (success) in
                     if success == true {
+                        updateBarButtonItems()
                     self.updateButtonStatesUsingSelectedNoteIndexes()
                     }
             }
@@ -1050,5 +884,59 @@ class SettingsViewController: UIViewController {
     let g = NoteAssistant.init(note: "g", tag: 10)
     let gS = NoteAssistant.init(note: "gS", tag: 11)
     
+    
+    @IBOutlet weak var leftBarCancelItem: UIBarButtonItem!
+    
+    @IBOutlet weak var rightBarSaveOrCancel: UIBarButtonItem!
+    
+   func updateBarButtonItems() {
+//        if hasChanged == true {
+//            DispatchQueue.main.async {
+//                 let newB = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.save, target: self, action:  #selector(self.saveOrCancel(_:)))
+//
+//                self.rightBarSaveOrCancel = newB
+//
+//                self.rightBarSaveOrCancel.tintColor = UIColor.systemGreen
+//                self.leftBarCancelItem.tintColor = UIColor.systemRed
+//                self.leftBarCancelItem.isEnabled = true
+//            }
+//        } else if hasChanged == false {
+//            let rightCancelBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action:  #selector(cancelOrHide(_:)))
+//            rightCancelBarButtonItem.tintColor = UIColor.systemRed
+//            DispatchQueue.main.async {
+//            self.leftBarCancelItem.tintColor = UIColor.clear
+//            self.leftBarCancelItem.isEnabled = false
+//            self.rightBarSaveOrCancel = rightCancelBarButtonItem
+//            }
+//        }
+    }
+    
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        updateBarButtonItems()
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+            updateBarButtonItems()
+    }
 
+    
+    //MARK: Navigation
+    
+       override func delete(_ sender: Any?) {
+           
+           dismiss(animated: true)
+           
+       }
+       
+       override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
+           
+        delegate?.updateGameSettings(settings: newGameSettings)
+        
+       }
+    
+    
+   
 }
+
+
+

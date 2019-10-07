@@ -8,40 +8,38 @@
 
 import Foundation
 
+protocol GameSettingsDelegate {
+    func updateGameSettings(settings: GameSettings)
+}
 
+extension GameSettings: Equatable {
+    static func == (lhs: GameSettings, rhs: GameSettings) -> Bool {
+      return  lhs.difficulty == rhs.difficulty &&
+        lhs.numberOfNotes == rhs.numberOfNotes &&
+        lhs.numberOfLifes == rhs.numberOfLifes &&
+        lhs.numberOfSkips == rhs.numberOfSkips &&
+        lhs.selectedNotesIndexes == rhs.selectedNotesIndexes
+    }
+}
 
 struct GameSettings {
+    
     
    //  var instrument: Instrument = Instrument(name: "Piano", notes: [])
      var difficulty: Difficulty = .regular
      var notesAssistant: [NoteAssistant] = []
-    
      var numberOfLifes: Int = 5
-    var numberOfNotes: Int = 7
+     var numberOfNotes: Int = 7
      var skipsEnabled: Bool = true
      var numberOfSkips: Int = 10
      var repeatsEnabled: Bool = true
-    
- 
-    init( difficulty: Difficulty = .regular, notesAssist: [NoteAssistant]? = nil, lifes:Int = 5, skipOk: Bool = true, skips:Int = 10, repeatsOk: Bool = true, numberOfNotes: Int = 7) {
+     var selectedNotesIndexes: [Int] = [0,2,3,5,7,8,10]
 
-        let a = NoteAssistant.init(note: "a", tag: 0)
-        let bB = NoteAssistant.init(note: "bB", tag: 1)
-        let b = NoteAssistant.init(note: "b", tag: 2)
-        let c = NoteAssistant.init(note: "c", tag: 3)
-        let cS = NoteAssistant.init(note: "cS", tag: 4)
-        let d = NoteAssistant.init(note: "d", tag: 5)
-        let eB = NoteAssistant.init(note: "eB", tag: 6)
-        let e = NoteAssistant.init(note: "e", tag: 7)
-        let f = NoteAssistant.init(note: "f", tag: 8)
-        let fS = NoteAssistant.init(note: "fS", tag: 9)
-        let g = NoteAssistant.init(note: "g", tag: 10)
-        let gS = NoteAssistant.init(note: "gS", tag: 11)
+ 
+    init( difficulty: Difficulty = .regular, selectedNoteIndexes: [Int] = [0,2,3,5,7,8,10] , lifes:Int = 5, skipOk: Bool = true, skips:Int = 10, repeatsOk: Bool = true, numberOfNotes: Int = 7) {
+
+        self.selectedNotesIndexes = selectedNoteIndexes
         self.difficulty = difficulty
-        if let notesAssisted = notesAssist  {
-            self.notesAssistant = notesAssisted } else {
-            self.notesAssistant = [a,bB,b,c,cS,d,eB,e,f,fS,g,gS]
-        }
         self.numberOfLifes = lifes
         self.skipsEnabled = skipOk
         self.numberOfSkips = skips
@@ -138,6 +136,8 @@ struct GameSettings {
     
  
 }
+
+
 
 
 enum Difficulty: String {

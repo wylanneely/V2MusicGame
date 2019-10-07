@@ -21,10 +21,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Hpv-8o-Lmd">
-                                <rect key="frame" x="107.5" y="342" width="199" height="212"/>
+                                <rect key="frame" x="153" y="342" width="108" height="212"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="47" translatesAutoresizingMaskIntoConstraints="NO" id="jwD-pg-XTt">
-                                        <rect key="frame" x="4" y="0.0" width="191" height="53"/>
+                                        <rect key="frame" x="0.5" y="0.0" width="107" height="53"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1qK-qY-X3o">
                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="53"/>
@@ -33,15 +33,15 @@
                                                     <color key="titleColor" name="NoteButtonsColor"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZf-Dl-B3i">
-                                                <rect key="frame" x="77" y="0.0" width="37" height="53"/>
+                                            <button hidden="YES" opaque="NO" tag="1" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZf-Dl-B3i">
+                                                <rect key="frame" x="53.5" y="0.0" width="0.0" height="53"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                                 <state key="normal" title="B♭">
                                                     <color key="titleColor" name="NoteButtonsColor"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tla-PS-bfb">
-                                                <rect key="frame" x="161" y="0.0" width="30" height="53"/>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tla-PS-bfb">
+                                                <rect key="frame" x="77" y="0.0" width="30" height="53"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                                 <state key="normal" title="B">
                                                     <color key="titleColor" name="NoteButtonsColor"/>
@@ -50,24 +50,24 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="fyS-YQ-Xhd">
-                                        <rect key="frame" x="0.0" y="53" width="199" height="53"/>
+                                        <rect key="frame" x="0.0" y="53" width="108" height="53"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MgQ-sS-Mqj">
-                                                <rect key="frame" x="0.0" y="0.0" width="43" height="53"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                                <state key="normal" title="C♯">
-                                                    <color key="titleColor" name="NoteButtonsColor"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5lk-QJ-exw">
-                                                <rect key="frame" x="91" y="0.0" width="30" height="53"/>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5lk-QJ-exw">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="53"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                                 <state key="normal" title="C">
                                                     <color key="titleColor" name="NoteButtonsColor"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cO8-1N-Ogd">
-                                                <rect key="frame" x="169" y="0.0" width="30" height="53"/>
+                                            <button hidden="YES" opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MgQ-sS-Mqj">
+                                                <rect key="frame" x="54" y="0.0" width="0.0" height="53"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                                <state key="normal" title="C♯">
+                                                    <color key="titleColor" name="NoteButtonsColor"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cO8-1N-Ogd">
+                                                <rect key="frame" x="78" y="0.0" width="30" height="53"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                                 <state key="normal" title="D">
                                                     <color key="titleColor" name="NoteButtonsColor"/>
@@ -76,54 +76,54 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="38" translatesAutoresizingMaskIntoConstraints="NO" id="2bn-zD-Hb7">
-                                        <rect key="frame" x="10" y="106" width="179" height="53"/>
+                                        <rect key="frame" x="5" y="106" width="98" height="53"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ysu-Jq-Rgc">
-                                                <rect key="frame" x="0.0" y="0.0" width="35" height="53"/>
+                                            <button hidden="YES" tag="6" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ysu-Jq-Rgc">
+                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="53"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                                 <state key="normal" title="E♭">
                                                     <color key="titleColor" name="NoteButtonsColor"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qai-ol-jwZ">
-                                                <rect key="frame" x="73" y="0.0" width="30" height="53"/>
+                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qai-ol-jwZ">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="53"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                                 <state key="normal" title="E">
                                                     <color key="titleColor" name="NoteButtonsColor"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lP0-kT-DeP">
-                                                <rect key="frame" x="141" y="0.0" width="38" height="53"/>
+                                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEd-dd-rmH">
+                                                <rect key="frame" x="68" y="0.0" width="30" height="53"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                                <state key="normal" title="F♯">
+                                                <state key="normal" title="F">
                                                     <color key="titleColor" name="NoteButtonsColor"/>
                                                 </state>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="eTr-IT-zlk">
-                                        <rect key="frame" x="19.5" y="159" width="160" height="53"/>
+                                        <rect key="frame" x="39" y="159" width="30" height="53"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEd-dd-rmH">
-                                                <rect key="frame" x="0.0" y="0.0" width="30" height="53"/>
+                                            <button hidden="YES" opaque="NO" tag="9" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lP0-kT-DeP">
+                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="53"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                                <state key="normal" title="F">
+                                                <state key="normal" title="F♯">
                                                     <color key="titleColor" name="NoteButtonsColor"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="aE2-3n-peV">
-                                                <rect key="frame" x="58" y="0.0" width="44" height="53"/>
+                                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hNg-No-CLL">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="53"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                                <state key="normal" title="G">
+                                                    <color key="titleColor" name="NoteButtonsColor"/>
+                                                </state>
+                                            </button>
+                                            <button hidden="YES" opaque="NO" tag="11" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="aE2-3n-peV">
+                                                <rect key="frame" x="30" y="0.0" width="0.0" height="53"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                                 <state key="normal" title="G♯">
-                                                    <color key="titleColor" name="NoteButtonsColor"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hNg-No-CLL">
-                                                <rect key="frame" x="130" y="0.0" width="30" height="53"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                                <state key="normal" title="G">
                                                     <color key="titleColor" name="NoteButtonsColor"/>
                                                 </state>
                                             </button>
@@ -180,29 +180,52 @@
                     </view>
                     <navigationItem key="navigationItem" id="RnG-1J-pD7">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="rKc-X1-YO7">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="LzR-0k-yun">
-                                <rect key="frame" x="20" y="12.5" width="82.5" height="19"/>
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="LzR-0k-yun">
+                                <rect key="frame" x="20" y="11.5" width="93.5" height="21.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                <state key="normal" title=" Settings" image="music.note.list" catalog="system">
-                                    <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <state key="normal" image="music.note.list" catalog="system">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content=" Settings">
+                                            <attributes>
+                                                <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <font key="NSFont" metaFont="system" size="18"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
                                 </state>
                                 <connections>
-                                    <segue destination="CiL-DF-LCK" kind="presentation" identifier="settingsSegue" modalPresentationStyle="pageSheet" id="bKa-5v-Tyv"/>
+                                    <action selector="toSettings:" destination="JoI-Af-mCh" eventType="touchUpInside" id="7ec-6L-g69"/>
                                 </connections>
                             </button>
+                            <connections>
+                                <segue destination="CiL-DF-LCK" kind="presentation" identifier="toSettings" modalPresentationStyle="automatic" id="zeM-ff-Ajx"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="h9r-rv-H0l">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mBx-Jm-BqA">
-                                <rect key="frame" x="289.5" y="11.5" width="104.5" height="21"/>
+                                <rect key="frame" x="274.5" y="11" width="119.5" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                 <state key="normal" title=" High Scores" image="rosette" catalog="system">
                                     <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="aButton" destination="1qK-qY-X3o" id="3W4-K1-jzE"/>
+                        <outlet property="bButton" destination="Tla-PS-bfb" id="J45-xc-sJr"/>
+                        <outlet property="bFButton" destination="cZf-Dl-B3i" id="TCC-xV-Gp1"/>
+                        <outlet property="cButton" destination="5lk-QJ-exw" id="Fcb-J8-QJg"/>
+                        <outlet property="cSButton" destination="MgQ-sS-Mqj" id="aHB-V0-vl2"/>
+                        <outlet property="dButton" destination="cO8-1N-Ogd" id="1pz-Hz-6n5"/>
+                        <outlet property="eBButton" destination="Ysu-Jq-Rgc" id="NvI-HG-BNS"/>
+                        <outlet property="eButton" destination="qai-ol-jwZ" id="5SS-bf-S3m"/>
+                        <outlet property="fButton" destination="VEd-dd-rmH" id="05g-Vj-h7I"/>
+                        <outlet property="fSButton" destination="lP0-kT-DeP" id="I1P-RS-FkO"/>
+                        <outlet property="gButton" destination="hNg-No-CLL" id="9v7-Ll-Gxw"/>
+                        <outlet property="gSButton" destination="aE2-3n-peV" id="HCr-Eb-hc3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2rv-0a-u9v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -464,6 +487,29 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zzl-MO-f2d">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" name="NavigationBarTextColors"/>
+                                <color key="barTintColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" name="NavigationBarTextColors"/>
+                                </textAttributes>
+                                <textAttributes key="largeTitleTextAttributes">
+                                    <color key="textColor" name="NavigationBarTextColors"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Settings" id="Kec-xd-sf3">
+                                        <barButtonItem key="leftBarButtonItem" enabled="NO" systemItem="cancel" id="8IU-Wa-gXB">
+                                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="PXn-pG-LsY">
+                                            <color key="tintColor" name="NavigationBarTextColors"/>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -483,6 +529,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9ZV-dN-cJ2"/>
                     </view>
+                    <navigationItem key="navigationItem" id="iAy-tO-hvP"/>
                     <connections>
                         <outlet property="aButton" destination="mSY-wO-q89" id="cN2-Tv-SGZ"/>
                         <outlet property="bButton" destination="Adu-Wf-pIA" id="s5b-hf-9Rj"/>
@@ -508,7 +555,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3eo-Nc-D8X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1060.8695652173915" y="906.69642857142856"/>
+            <point key="canvasLocation" x="2954" y="285"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Z94-Vb-Qu3">
@@ -526,12 +573,18 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gtt-Bh-W5d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1139.1304347826087" y="206.25"/>
+            <point key="canvasLocation" x="851" y="206"/>
         </scene>
     </scenes>
     <resources>
         <image name="music.note.list" catalog="system" width="64" height="56"/>
         <image name="rosette" catalog="system" width="50" height="64"/>
+        <namedColor name="NavigationBarTextColors">
+            <color red="1" green="0.43075719964164749" blue="0.69968575374516195" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="NavigationBarTextColors">
+            <color red="0.80800002813339233" green="0.0" blue="0.3190000057220459" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="NoteButtonsColor">
             <color red="1" green="0.15800000727176666" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
