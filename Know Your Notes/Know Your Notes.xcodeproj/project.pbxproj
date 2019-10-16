@@ -10,6 +10,8 @@
 		E913873C2341BBF300C4227D /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = E913873B2341BBF300C4227D /* Sounds */; };
 		E91387402341F74F00C4227D /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E913873F2341F74F00C4227D /* SettingsController.swift */; };
 		E9138748234231AD00C4227D /* GamePlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9138747234231AD00C4227D /* GamePlayViewController.swift */; };
+		E9408217234BCC6C00FAC1D3 /* NoteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9408216234BCC6C00FAC1D3 /* NoteButton.swift */; };
+		E940821B234BCCF500FAC1D3 /* NoteButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E940821A234BCCF500FAC1D3 /* NoteButtonView.xib */; };
 		E9662D5A233C76DC00E4E471 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9662D59233C76DC00E4E471 /* AppDelegate.swift */; };
 		E9662D5C233C76DC00E4E471 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9662D5B233C76DC00E4E471 /* SceneDelegate.swift */; };
 		E9662D61233C76DC00E4E471 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9662D5F233C76DC00E4E471 /* Main.storyboard */; };
@@ -24,9 +26,13 @@
 		E9D0333F23423A2B00F4681F /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9D0333E23423A2B00F4681F /* Color.xcassets */; };
 		E9D0334123423AE000F4681F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D0334023423AE000F4681F /* SettingsViewController.swift */; };
 		E9D03343234396EA00F4681F /* GlobalAppHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D03342234396EA00F4681F /* GlobalAppHandler.swift */; };
-		E9D033452344D88A00F4681F /* NoteButtonsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9D033442344D88A00F4681F /* NoteButtonsView.xib */; };
 		E9E73B0B2348870A007A4FAC /* NumbersExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E73B0A2348870A007A4FAC /* NumbersExtensions.swift */; };
 		E9E73B0D234896D8007A4FAC /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E73B0C234896D8007A4FAC /* ArrayExtensions.swift */; };
+		E9FAC2202357568900172FCD /* XibViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FAC21F2357568900172FCD /* XibViewController.swift */; };
+		E9FAC22223575C9A00172FCD /* NoteButtonsStack.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9FAC22123575C9A00172FCD /* NoteButtonsStack.xib */; };
+		E9FAC227235761D800172FCD /* NoteButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FAC226235761D800172FCD /* NoteButtons.swift */; };
+		E9FAC2292357622B00172FCD /* NibXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FAC2282357622B00172FCD /* NibXib.swift */; };
+		E9FAC22B23576D9400172FCD /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FAC22A23576D9400172FCD /* View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +56,8 @@
 		E913873B2341BBF300C4227D /* Sounds */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = folder; name = Sounds; path = "Know Your Notes/Instruments/Sounds"; sourceTree = SOURCE_ROOT; };
 		E913873F2341F74F00C4227D /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		E9138747234231AD00C4227D /* GamePlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayViewController.swift; sourceTree = "<group>"; };
+		E9408216234BCC6C00FAC1D3 /* NoteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteButton.swift; sourceTree = "<group>"; };
+		E940821A234BCCF500FAC1D3 /* NoteButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteButtonView.xib; sourceTree = "<group>"; };
 		E9662D56233C76DC00E4E471 /* Know Your Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Know Your Notes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9662D59233C76DC00E4E471 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9662D5B233C76DC00E4E471 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,9 +78,14 @@
 		E9D0333E23423A2B00F4681F /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		E9D0334023423AE000F4681F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E9D03342234396EA00F4681F /* GlobalAppHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalAppHandler.swift; sourceTree = "<group>"; };
-		E9D033442344D88A00F4681F /* NoteButtonsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteButtonsView.xib; sourceTree = "<group>"; };
 		E9E73B0A2348870A007A4FAC /* NumbersExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersExtensions.swift; sourceTree = "<group>"; };
 		E9E73B0C234896D8007A4FAC /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
+		E9FAC21F2357568900172FCD /* XibViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibViewController.swift; sourceTree = "<group>"; };
+		E9FAC22123575C9A00172FCD /* NoteButtonsStack.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteButtonsStack.xib; sourceTree = "<group>"; };
+		E9FAC22423575EF100172FCD /* NoteButtonsStackView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteButtonsStackView.xib; sourceTree = "<group>"; };
+		E9FAC226235761D800172FCD /* NoteButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteButtons.swift; sourceTree = "<group>"; };
+		E9FAC2282357622B00172FCD /* NibXib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibXib.swift; sourceTree = "<group>"; };
+		E9FAC22A23576D9400172FCD /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,12 +122,21 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		E91387462342313700C4227D /* Views */ = {
+		E91387462342313700C4227D /* ViewsControllers */ = {
 			isa = PBXGroup;
 			children = (
 				E9138747234231AD00C4227D /* GamePlayViewController.swift */,
 				E9D0334023423AE000F4681F /* SettingsViewController.swift */,
-				E9D033442344D88A00F4681F /* NoteButtonsView.xib */,
+				E9FAC21F2357568900172FCD /* XibViewController.swift */,
+			);
+			path = ViewsControllers;
+			sourceTree = "<group>";
+		};
+		E9408213234BC6DB00FAC1D3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E9FAC22123575C9A00172FCD /* NoteButtonsStack.xib */,
+				E9FAC226235761D800172FCD /* NoteButtons.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -142,19 +164,22 @@
 		E9662D58233C76DC00E4E471 /* Know Your Notes */ = {
 			isa = PBXGroup;
 			children = (
-				E9D0333C23423A2100F4681F /* Assets.xcassets */,
 				E9662D5F233C76DC00E4E471 /* Main.storyboard */,
+				E9FAC22523575F5300172FCD /* Resources */,
+				E9D0333C23423A2100F4681F /* Assets.xcassets */,
+				E9D0333E23423A2B00F4681F /* Color.xcassets */,
 				E9662D59233C76DC00E4E471 /* AppDelegate.swift */,
 				E9662D5B233C76DC00E4E471 /* SceneDelegate.swift */,
-				E9662D67233C76DE00E4E471 /* LaunchScreen.storyboard */,
 				E9662D6A233C76DE00E4E471 /* Info.plist */,
 				E9662D62233C76DC00E4E471 /* Know_Your_Notes.xcdatamodeld */,
-				E91387462342313700C4227D /* Views */,
+				E9662D67233C76DE00E4E471 /* LaunchScreen.storyboard */,
+				E9408213234BC6DB00FAC1D3 /* Views */,
+				E91387462342313700C4227D /* ViewsControllers */,
 				E9B0EA0C234850AA006E598B /* ModelControllers */,
 				E91387412341FB1700C4227D /* Models */,
 				E9662D92233C80E000E4E471 /* Instruments */,
 				E9E73B09234886E6007A4FAC /* Extensions */,
-				E9D0333E23423A2B00F4681F /* Color.xcassets */,
+				E9FAC22323575EDB00172FCD /* OldUnusedFiles */,
 			);
 			path = "Know Your Notes";
 			sourceTree = "<group>";
@@ -200,8 +225,27 @@
 			children = (
 				E9E73B0A2348870A007A4FAC /* NumbersExtensions.swift */,
 				E9E73B0C234896D8007A4FAC /* ArrayExtensions.swift */,
+				E9FAC2282357622B00172FCD /* NibXib.swift */,
+				E9FAC22A23576D9400172FCD /* View.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E9FAC22323575EDB00172FCD /* OldUnusedFiles */ = {
+			isa = PBXGroup;
+			children = (
+				E9408216234BCC6C00FAC1D3 /* NoteButton.swift */,
+				E940821A234BCCF500FAC1D3 /* NoteButtonView.xib */,
+				E9FAC22423575EF100172FCD /* NoteButtonsStackView.xib */,
+			);
+			path = OldUnusedFiles;
+			sourceTree = "<group>";
+		};
+		E9FAC22523575F5300172FCD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,9 +352,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9FAC22223575C9A00172FCD /* NoteButtonsStack.xib in Resources */,
+				E940821B234BCCF500FAC1D3 /* NoteButtonView.xib in Resources */,
 				E9662D69233C76DE00E4E471 /* LaunchScreen.storyboard in Resources */,
 				E913873C2341BBF300C4227D /* Sounds in Resources */,
-				E9D033452344D88A00F4681F /* NoteButtonsView.xib in Resources */,
 				E9D0333F23423A2B00F4681F /* Color.xcassets in Resources */,
 				E9D0333D23423A2100F4681F /* Assets.xcassets in Resources */,
 				E9662D61233C76DC00E4E471 /* Main.storyboard in Resources */,
@@ -340,8 +385,13 @@
 			files = (
 				E91387402341F74F00C4227D /* SettingsController.swift in Sources */,
 				E9662D91233C7B0100E4E471 /* Note.swift in Sources */,
+				E9FAC2202357568900172FCD /* XibViewController.swift in Sources */,
+				E9FAC2292357622B00172FCD /* NibXib.swift in Sources */,
+				E9FAC22B23576D9400172FCD /* View.swift in Sources */,
 				E9662D64233C76DC00E4E471 /* Know_Your_Notes.xcdatamodeld in Sources */,
+				E9408217234BCC6C00FAC1D3 /* NoteButton.swift in Sources */,
 				E9D03343234396EA00F4681F /* GlobalAppHandler.swift in Sources */,
+				E9FAC227235761D800172FCD /* NoteButtons.swift in Sources */,
 				E9662D8D233C7A2500E4E471 /* GameSettings.swift in Sources */,
 				E9662D5A233C76DC00E4E471 /* AppDelegate.swift in Sources */,
 				E9662D8F233C7A5700E4E471 /* Instrument.swift in Sources */,

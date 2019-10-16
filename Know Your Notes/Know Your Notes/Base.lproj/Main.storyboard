@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kMC-Re-rYU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QKc-gP-dso">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Game Play View Controller-->
+        <!--View Controller-->
         <scene sceneID="exv-Fu-Xf7">
             <objects>
-                <viewController id="JoI-Af-mCh" customClass="GamePlayViewController" customModule="Know_Your_Notes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="JoI-Af-mCh" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="W8t-B1-mVg"/>
                         <viewControllerLayoutGuide type="bottom" id="Z1Z-Ob-mdM"/>
@@ -193,13 +193,7 @@
                                         </fragment>
                                     </attributedString>
                                 </state>
-                                <connections>
-                                    <action selector="toSettings:" destination="JoI-Af-mCh" eventType="touchUpInside" id="7ec-6L-g69"/>
-                                </connections>
                             </button>
-                            <connections>
-                                <segue destination="CiL-DF-LCK" kind="presentation" identifier="toSettings" modalPresentationStyle="automatic" id="zeM-ff-Ajx"/>
-                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="h9r-rv-H0l">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mBx-Jm-BqA">
@@ -212,24 +206,10 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="aButton" destination="1qK-qY-X3o" id="3W4-K1-jzE"/>
-                        <outlet property="bButton" destination="Tla-PS-bfb" id="J45-xc-sJr"/>
-                        <outlet property="bFButton" destination="cZf-Dl-B3i" id="TCC-xV-Gp1"/>
-                        <outlet property="cButton" destination="5lk-QJ-exw" id="Fcb-J8-QJg"/>
-                        <outlet property="cSButton" destination="MgQ-sS-Mqj" id="aHB-V0-vl2"/>
-                        <outlet property="dButton" destination="cO8-1N-Ogd" id="1pz-Hz-6n5"/>
-                        <outlet property="eBButton" destination="Ysu-Jq-Rgc" id="NvI-HG-BNS"/>
-                        <outlet property="eButton" destination="qai-ol-jwZ" id="5SS-bf-S3m"/>
-                        <outlet property="fButton" destination="VEd-dd-rmH" id="05g-Vj-h7I"/>
-                        <outlet property="fSButton" destination="lP0-kT-DeP" id="I1P-RS-FkO"/>
-                        <outlet property="gButton" destination="hNg-No-CLL" id="9v7-Ll-Gxw"/>
-                        <outlet property="gSButton" destination="aE2-3n-peV" id="HCr-Eb-hc3"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2rv-0a-u9v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2049.275362318841" y="206.25"/>
+            <point key="canvasLocation" x="2661" y="881"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="JE5-tY-oOZ">
@@ -555,35 +535,102 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3eo-Nc-D8X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2954" y="285"/>
+            <point key="canvasLocation" x="3863.7681159420295" y="284.59821428571428"/>
+        </scene>
+        <!--Game Play View Controller-->
+        <scene sceneID="Jdm-RE-tny">
+            <objects>
+                <viewController id="Uwf-i4-TyT" customClass="GamePlayViewController" customModule="Know_Your_Notes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MrQ-KB-5Yx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EyI-a4-hwv" userLabel="CenterNoteContainerView">
+                                <rect key="frame" x="20" y="190" width="374" height="516"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G2M-bP-E9D" customClass="XibViewController" customModule="Know_Your_Notes" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="516"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="EyI-a4-hwv" secondAttribute="height" multiplier="187:258" id="NeK-4y-ded"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="EyI-a4-hwv" firstAttribute="centerY" secondItem="MrQ-KB-5Yx" secondAttribute="centerY" id="Nve-Oi-squ"/>
+                            <constraint firstItem="EyI-a4-hwv" firstAttribute="leading" secondItem="MrQ-KB-5Yx" secondAttribute="leadingMargin" id="WEo-qE-QXy"/>
+                            <constraint firstItem="EyI-a4-hwv" firstAttribute="centerX" secondItem="MrQ-KB-5Yx" secondAttribute="centerX" id="t85-ut-Ov4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gaQ-vy-DIn"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="RTq-ES-dxk">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="QbJ-aG-MhR">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="sMh-jf-dIr" userLabel="Settings">
+                                <rect key="frame" x="20" y="11.5" width="93.5" height="21.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="music.note.list" catalog="system">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content=" Settings">
+                                            <attributes>
+                                                <color key="NSColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <font key="NSFont" metaFont="system" size="18"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <segue destination="CiL-DF-LCK" kind="presentation" id="vrc-xl-w0C"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="NK9-Uo-VGK">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="03U-0O-Upr">
+                                <rect key="frame" x="274.5" y="11" width="119.5" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                <state key="normal" title=" High Scores" image="rosette" catalog="system">
+                                    <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nX2-vz-ufm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3038" y="-160"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="Z94-Vb-Qu3">
+        <scene sceneID="aDW-vu-uHd">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kMC-Re-rYU" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QKc-gP-dso" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="axy-1n-mee">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MHs-pQ-Eqe">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="JoI-Af-mCh" kind="relationship" relationship="rootViewController" id="Qfv-hi-tME"/>
+                        <segue destination="Uwf-i4-TyT" kind="relationship" relationship="rootViewController" id="9Zr-4P-og2"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Gtt-Bh-W5d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mkK-B5-GSX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="851" y="206"/>
+            <point key="canvasLocation" x="1865.217391304348" y="-28.125"/>
         </scene>
     </scenes>
     <resources>
         <image name="music.note.list" catalog="system" width="64" height="56"/>
         <image name="rosette" catalog="system" width="50" height="64"/>
         <namedColor name="NavigationBarTextColors">
-            <color red="1" green="0.43075719964164749" blue="0.69968575374516195" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.80800002813339233" green="0.0" blue="0.3190000057220459" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="NavigationBarTextColors">
-            <color red="0.80800002813339233" green="0.0" blue="0.3190000057220459" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.43075719964164749" blue="0.69968575374516195" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="NoteButtonsColor">
             <color red="1" green="0.15800000727176666" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

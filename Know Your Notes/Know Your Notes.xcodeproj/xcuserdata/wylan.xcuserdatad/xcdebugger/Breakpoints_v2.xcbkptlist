@@ -50,38 +50,6 @@
             endingLineNumber = "77"
             landmarkName = "matchViewsToOldSettings(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "70C32BDB-5AFD-4F33-8857-A55C766149E2 - 86daf811a315e8d8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Know_Your_Notes.SettingsViewController.matchViewsToOldSettings(Know_Your_Notes.GameSettings) -&gt; ()"
-                  moduleName = "Know Your Notes"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wylan/Desktop/New%20Apps/Know%20Your%20Notes/Know%20Your%20Notes/Views/SettingsViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "77"
-                  endingLineNumber = "77"
-                  offsetFromSymbolStart = "627">
-               </Location>
-               <Location
-                  uuid = "70C32BDB-5AFD-4F33-8857-A55C766149E2 - 6f9c9089e21243c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Array&lt;Know_Your_Notes.NoteAssistant&gt;) -&gt; () in Know_Your_Notes.SettingsViewController.matchViewsToOldSettings(Know_Your_Notes.GameSettings) -&gt; ()"
-                  moduleName = "Know Your Notes"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wylan/Desktop/New%20Apps/Know%20Your%20Notes/Know%20Your%20Notes/Views/SettingsViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "78"
-                  endingLineNumber = "78"
-                  offsetFromSymbolStart = "447">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -210,38 +178,6 @@
             endingLineNumber = "287"
             landmarkName = "customSetUpWithNotes(number:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "B8894072-1465-4361-A345-8BD96CA2AB6D - 45eb90c19c161213"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Know_Your_Notes.SettingsViewController.customSetUpWithNotes(number: Swift.Int) -&gt; ()"
-                  moduleName = "Know Your Notes"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wylan/Desktop/New%20Apps/Know%20Your%20Notes/Know%20Your%20Notes/Views/SettingsViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "288"
-                  endingLineNumber = "288"
-                  offsetFromSymbolStart = "70">
-               </Location>
-               <Location
-                  uuid = "B8894072-1465-4361-A345-8BD96CA2AB6D - 1e5e6e5660cca563"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Array&lt;Know_Your_Notes.NoteAssistant&gt;) -&gt; () in Know_Your_Notes.SettingsViewController.customSetUpWithNotes(number: Swift.Int) -&gt; ()"
-                  moduleName = "Know Your Notes"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wylan/Desktop/New%20Apps/Know%20Your%20Notes/Know%20Your%20Notes/Views/SettingsViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "289"
-                  endingLineNumber = "289"
-                  offsetFromSymbolStart = "249">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -274,38 +210,6 @@
             endingLineNumber = "807"
             landmarkName = "gTapped(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "1375A127-7456-40FA-8F23-7B280A03411C - 85b8a476ccbf9c7b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Know_Your_Notes.SettingsViewController.gTapped(Any) -&gt; ()"
-                  moduleName = "Know Your Notes"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wylan/Desktop/New%20Apps/Know%20Your%20Notes/Know%20Your%20Notes/Views/SettingsViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "807"
-                  endingLineNumber = "807"
-                  offsetFromSymbolStart = "556">
-               </Location>
-               <Location
-                  uuid = "1375A127-7456-40FA-8F23-7B280A03411C - 138e3e4e037b215e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Bool) -&gt; () in Know_Your_Notes.SettingsViewController.gTapped(Any) -&gt; ()"
-                  moduleName = "Know Your Notes"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wylan/Desktop/New%20Apps/Know%20Your%20Notes/Know%20Your%20Notes/Views/SettingsViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "808"
-                  endingLineNumber = "808"
-                  offsetFromSymbolStart = "34">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -512,8 +416,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "32"
             endingLineNumber = "32"
-            landmarkName = "viewWillAppear(_:)"
-            landmarkType = "7">
+            landmarkName = "GamePlayViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -544,8 +448,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "125"
             endingLineNumber = "125"
-            landmarkName = "setButtonNoteStates(selectedNoteIndexes:)"
-            landmarkType = "7">
+            landmarkName = "GamePlayViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -560,7 +464,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "107"
             endingLineNumber = "107"
-            landmarkName = "updateGameSettings(settings:)"
+            landmarkName = "setButtonNoteStates(selectedNoteIndexes:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -610,38 +514,6 @@
             endingLineNumber = "94"
             landmarkName = "matchViewsToOldSettings(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "9526C62B-FF1D-4AA4-A9AC-739BF9E28422 - 859b4744bf269f40"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Bool) -&gt; () in closure #1 (Swift.Array&lt;Know_Your_Notes.NoteAssistant&gt;) -&gt; () in Know_Your_Notes.SettingsViewController.matchViewsToOldSettings(Know_Your_Notes.GameSettings) -&gt; ()"
-                  moduleName = "Know Your Notes"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wylan/Desktop/New%20Apps/Know%20Your%20Notes/Know%20Your%20Notes/Views/SettingsViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "94"
-                  endingLineNumber = "94"
-                  offsetFromSymbolStart = "629">
-               </Location>
-               <Location
-                  uuid = "9526C62B-FF1D-4AA4-A9AC-739BF9E28422 - 6f42e48ba8c14b05"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in closure #1 (Swift.Bool) -&gt; () in closure #1 (Swift.Array&lt;Know_Your_Notes.NoteAssistant&gt;) -&gt; () in Know_Your_Notes.SettingsViewController.matchViewsToOldSettings(Know_Your_Notes.GameSettings) -&gt; ()"
-                  moduleName = "Know Your Notes"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wylan/Desktop/New%20Apps/Know%20Your%20Notes/Know%20Your%20Notes/Views/SettingsViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "94"
-                  endingLineNumber = "94"
-                  offsetFromSymbolStart = "2591">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -656,7 +528,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "113"
             endingLineNumber = "113"
-            landmarkName = "updateGameSettings(settings:)"
+            landmarkName = "setButtonNoteStates(selectedNoteIndexes:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -672,7 +544,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "110"
             endingLineNumber = "110"
-            landmarkName = "updateGameSettings(settings:)"
+            landmarkName = "setButtonNoteStates(selectedNoteIndexes:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -688,8 +560,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "120"
             endingLineNumber = "120"
-            landmarkName = "setButtonNoteStates(selectedNoteIndexes:)"
-            landmarkType = "7">
+            landmarkName = "GamePlayViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -704,40 +576,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "135"
             endingLineNumber = "135"
-            landmarkName = "setButtonNoteStates(selectedNoteIndexes:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "7DD34653-9461-47E8-A39C-0556B219BABE - 8838a5b30ddb4bd3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Know_Your_Notes.GamePlayViewController.setButtonNoteStates(selectedNoteIndexes: Swift.Array&lt;Swift.Int&gt;) -&gt; ()"
-                  moduleName = "Know Your Notes"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wylan/Desktop/New%20Apps/Know%20Your%20Notes/Know%20Your%20Notes/Views/GamePlayViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "135"
-                  endingLineNumber = "135"
-                  offsetFromSymbolStart = "1308">
-               </Location>
-               <Location
-                  uuid = "7DD34653-9461-47E8-A39C-0556B219BABE - b59743186d7bf018"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 () -&gt; () in Know_Your_Notes.GamePlayViewController.setButtonNoteStates(selectedNoteIndexes: Swift.Array&lt;Swift.Int&gt;) -&gt; ()"
-                  moduleName = "Know Your Notes"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wylan/Desktop/New%20Apps/Know%20Your%20Notes/Know%20Your%20Notes/Views/GamePlayViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "136"
-                  endingLineNumber = "136"
-                  offsetFromSymbolStart = "20">
-               </Location>
-            </Locations>
+            landmarkName = "GamePlayViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -752,8 +592,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "128"
             endingLineNumber = "128"
-            landmarkName = "setButtonNoteStates(selectedNoteIndexes:)"
-            landmarkType = "7">
+            landmarkName = "noteButtons"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -768,8 +608,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "139"
             endingLineNumber = "139"
-            landmarkName = "setButtonNoteStates(selectedNoteIndexes:)"
-            landmarkType = "7">
+            landmarkName = "GamePlayViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -784,8 +624,24 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "131"
             endingLineNumber = "131"
-            landmarkName = "setButtonNoteStates(selectedNoteIndexes:)"
-            landmarkType = "7">
+            landmarkName = "GamePlayViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9AF1D270-BCD9-4148-9AEF-3DD07C5B4160"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Know Your Notes/ViewsControllers/GamePlayViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
+            landmarkName = "GamePlayViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
