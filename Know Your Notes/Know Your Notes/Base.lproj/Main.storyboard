@@ -209,7 +209,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2rv-0a-u9v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2661" y="881"/>
+            <point key="canvasLocation" x="3097" y="532"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="JE5-tY-oOZ">
@@ -535,7 +535,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3eo-Nc-D8X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3863.7681159420295" y="284.59821428571428"/>
+            <point key="canvasLocation" x="4255" y="-569"/>
         </scene>
         <!--Game Play View Controller-->
         <scene sceneID="Jdm-RE-tny">
@@ -545,26 +545,465 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EyI-a4-hwv" userLabel="CenterNoteContainerView">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" id="VoL-2c-vOu" userLabel="NoteButtonsStack" customClass="NoteButtonsStack" customModule="Know_Your_Notes" customModuleProvider="target">
                                 <rect key="frame" x="20" y="190" width="374" height="516"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G2M-bP-E9D" customClass="XibViewController" customModule="Know_Your_Notes" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="516"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="xmV-pG-eWh">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="124"/>
+                                        <subviews>
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7XG-lV-80i">
+                                                <rect key="frame" x="0.0" y="0.0" width="120" height="124"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="T4D-ab-mEW">
+                                                        <rect key="frame" x="0.0" y="0.0" width="120" height="124"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="55"/>
+                                                        <state key="normal" title="A">
+                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="aTapped:" destination="VoL-2c-vOu" eventType="touchUpInside" id="CZB-8Y-B3h"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Fw-5Y-egT">
+                                                <rect key="frame" x="127" y="0.0" width="120" height="124"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="aeF-XZ-T2S">
+                                                        <rect key="frame" x="0.0" y="0.0" width="114" height="124"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="58"/>
+                                                        <state key="normal" title="B♭">
+                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="bBTapped:" destination="VoL-2c-vOu" eventType="touchUpInside" id="IKB-R3-5C9"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="igL-f7-xDO">
+                                                <rect key="frame" x="254" y="0.0" width="120" height="124"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="LFw-k1-Ks8">
+                                                        <rect key="frame" x="0.0" y="0.0" width="120" height="124"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="58"/>
+                                                        <state key="normal" title="B">
+                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="bTapped:" destination="VoL-2c-vOu" eventType="touchUpInside" id="9Tw-WZ-seK"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="124" id="Hb3-oc-qgw"/>
+                                                    <constraint firstAttribute="width" constant="120" id="oNQ-G7-yVo"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="2Fw-5Y-egT" firstAttribute="centerX" secondItem="xmV-pG-eWh" secondAttribute="centerX" id="YFd-bo-Cwt"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="F0b-Jg-6QD">
+                                        <rect key="frame" x="0.0" y="132" width="374" height="124"/>
+                                        <subviews>
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IQE-kg-sdS">
+                                                <rect key="frame" x="0.0" y="0.0" width="120" height="124"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7gd-ye-THF">
+                                                        <rect key="frame" x="0.0" y="0.0" width="120" height="124"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="58"/>
+                                                        <state key="normal" title="C">
+                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="cTapped:" destination="VoL-2c-vOu" eventType="touchUpInside" id="cDC-Yg-blb"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" name="HotMagenta"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="120" id="IW5-zq-tj8"/>
+                                                    <constraint firstAttribute="height" constant="124" id="wxu-bf-RPD"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wgQ-4G-lAp">
+                                                <rect key="frame" x="127" y="0.0" width="120" height="124"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rUx-Y7-jk7">
+                                                        <rect key="frame" x="0.0" y="0.0" width="120" height="124"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="58"/>
+                                                        <state key="normal" title="C♯">
+                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="cSTapped:" destination="VoL-2c-vOu" eventType="touchUpInside" id="TYR-P8-6Wl"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dFf-tf-myI">
+                                                <rect key="frame" x="254" y="0.0" width="120" height="124"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gNu-u8-lJh">
+                                                        <rect key="frame" x="0.0" y="0.0" width="120" height="124"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="58"/>
+                                                        <state key="normal" title="D">
+                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="dTapped:" destination="VoL-2c-vOu" eventType="touchUpInside" id="ik2-9f-Xo7"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="124" id="H3d-BC-duE"/>
+                                                    <constraint firstAttribute="width" constant="120" id="IvI-gw-VjW"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="wgQ-4G-lAp" secondAttribute="bottom" id="4JY-kb-T9L"/>
+                                            <constraint firstItem="wgQ-4G-lAp" firstAttribute="top" secondItem="F0b-Jg-6QD" secondAttribute="top" id="Z6n-Yo-68y"/>
+                                            <constraint firstItem="wgQ-4G-lAp" firstAttribute="centerX" secondItem="F0b-Jg-6QD" secondAttribute="centerX" id="aQa-eB-OCk"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="ycO-Rl-Ypy">
+                                        <rect key="frame" x="0.0" y="264" width="374" height="124"/>
+                                        <subviews>
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dtF-sw-HcK">
+                                                <rect key="frame" x="0.0" y="0.0" width="120" height="124"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fLE-hC-Z4p">
+                                                        <rect key="frame" x="0.0" y="0.0" width="120" height="124"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="58"/>
+                                                        <state key="normal" title="E♭">
+                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="20"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="eBTapped:" destination="VoL-2c-vOu" eventType="touchUpInside" id="cYs-5o-5Lh"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ta-S1-9hQ">
+                                                <rect key="frame" x="127" y="0.0" width="120" height="124"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ESZ-Ze-kWZ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="114" height="124"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="58"/>
+                                                        <state key="normal" title="E">
+                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="20"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="eTapped:" destination="VoL-2c-vOu" eventType="touchUpInside" id="5fy-Kv-QGK"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" name="Color"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dwc-LE-XY4">
+                                                <rect key="frame" x="254" y="0.0" width="120" height="124"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="E3Q-dc-PaO">
+                                                        <rect key="frame" x="0.0" y="0.0" width="120" height="124"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="58"/>
+                                                        <state key="normal" title="F">
+                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="20"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="fTapped:" destination="VoL-2c-vOu" eventType="touchUpInside" id="lrt-ci-CeU"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="124" id="l1m-Po-GBe"/>
+                                                    <constraint firstAttribute="width" constant="120" id="vee-ZI-U8o"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="6ta-S1-9hQ" firstAttribute="centerX" secondItem="ycO-Rl-Ypy" secondAttribute="centerX" id="L18-G2-otU"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="lOt-yc-L81">
+                                        <rect key="frame" x="0.0" y="396" width="374" height="120"/>
+                                        <subviews>
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3K3-yN-Qf8">
+                                                <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="45Z-q8-Fs6">
+                                                        <rect key="frame" x="0.0" y="0.0" width="120" height="124"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="58"/>
+                                                        <state key="normal" title="F♯">
+                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="fSTapped:" destination="VoL-2c-vOu" eventType="touchUpInside" id="qKT-pv-QQ6"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GWy-1M-msz">
+                                                <rect key="frame" x="127" y="0.0" width="120" height="120"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8oS-1N-b3S">
+                                                        <rect key="frame" x="0.0" y="0.0" width="122" height="124"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="58"/>
+                                                        <state key="normal" title="G">
+                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="gTapped:" destination="VoL-2c-vOu" eventType="touchUpInside" id="heA-z4-C84"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WHY-eH-egT">
+                                                <rect key="frame" x="254" y="0.0" width="120" height="120"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="be5-1m-Kez">
+                                                        <rect key="frame" x="0.0" y="0.0" width="120" height="124"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="58"/>
+                                                        <state key="normal" title="G♯">
+                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="gSTapped:" destination="VoL-2c-vOu" eventType="touchUpInside" id="z85-l8-dMQ"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" name="CUSTOMTurk"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="GWy-1M-msz" firstAttribute="centerX" secondItem="lOt-yc-L81" secondAttribute="centerX" id="CC5-va-yvR"/>
+                                            <constraint firstItem="GWy-1M-msz" firstAttribute="leading" secondItem="lOt-yc-L81" secondAttribute="leading" constant="127" id="Tov-D6-Yoe"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <viewLayoutGuide key="safeArea" id="GFO-iI-pkr"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="AbackgroundView" destination="7XG-lV-80i" id="qGJ-qr-pOo"/>
+                                    <outlet property="aButton" destination="T4D-ab-mEW" id="KKg-kA-Wjf"/>
+                                    <outlet property="bBbackgroundView" destination="2Fw-5Y-egT" id="BNg-nf-X07"/>
+                                    <outlet property="bButton" destination="LFw-k1-Ks8" id="fOQ-ez-sMO"/>
+                                    <outlet property="bFButton" destination="aeF-XZ-T2S" id="VXJ-2g-l3q"/>
+                                    <outlet property="bbackgroundView" destination="igL-f7-xDO" id="5Bg-Qf-US8"/>
+                                    <outlet property="cButton" destination="7gd-ye-THF" id="q34-o4-ZSx"/>
+                                    <outlet property="cSButton" destination="rUx-Y7-jk7" id="Wnr-aH-iwk"/>
+                                    <outlet property="cSbackgroundView" destination="wgQ-4G-lAp" id="AKo-qU-EAk"/>
+                                    <outlet property="cbackgroundView" destination="IQE-kg-sdS" id="jjp-cR-wE3"/>
+                                    <outlet property="dButton" destination="gNu-u8-lJh" id="cAc-LQ-YqL"/>
+                                    <outlet property="dbackgroundView" destination="dFf-tf-myI" id="t0v-z1-He0"/>
+                                    <outlet property="eBButton" destination="fLE-hC-Z4p" id="HBd-Jj-qJC"/>
+                                    <outlet property="eBbackgroundView" destination="dtF-sw-HcK" id="Bdm-6p-mSr"/>
+                                    <outlet property="eButton" destination="ESZ-Ze-kWZ" id="WuA-CC-trd"/>
+                                    <outlet property="ebackgroundView" destination="6ta-S1-9hQ" id="WEi-n9-pUc"/>
+                                    <outlet property="fButton" destination="E3Q-dc-PaO" id="ZXG-K0-NhT"/>
+                                    <outlet property="fSButton" destination="45Z-q8-Fs6" id="j0d-dZ-Jjg"/>
+                                    <outlet property="fSbackgroundView" destination="3K3-yN-Qf8" id="9Tx-nz-9Jl"/>
+                                    <outlet property="fbackgroundView" destination="Dwc-LE-XY4" id="gXr-pE-o3T"/>
+                                    <outlet property="gButton" destination="8oS-1N-b3S" id="VjR-At-oHc"/>
+                                    <outlet property="gSButton" destination="be5-1m-Kez" id="Kkg-Th-mnH"/>
+                                    <outlet property="gSbackgroundView" destination="WHY-eH-egT" id="6dD-2a-slq"/>
+                                    <outlet property="gbackgroundView" destination="GWy-1M-msz" id="dLZ-ss-Y5h"/>
+                                </connections>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1VH-0V-061">
+                                <rect key="frame" x="308.5" y="808" width="53" height="39"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <state key="normal" title="Skips"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUX-G5-rvQ">
+                                <rect key="frame" x="324" y="766" width="22" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="EyI-a4-hwv" secondAttribute="height" multiplier="187:258" id="NeK-4y-ded"/>
+                                    <constraint firstAttribute="width" constant="22" id="Lc8-v6-Rst"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E8O-p8-LKT">
+                                <rect key="frame" x="45" y="808" width="76" height="39"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <state key="normal" title="Replays"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uxA-lq-zbS">
+                                <rect key="frame" x="71" y="766" width="24" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="hzq-Pk-Ze7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qbl-uK-0Il" userLabel="ScoreBackgroundView">
+                                <rect key="frame" x="174" y="90" width="66" height="92"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2wT-MM-BvW">
+                                        <rect key="frame" x="24.5" y="16" width="21.5" height="41"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JF2-01-NxU">
+                                        <rect key="frame" x="13" y="63" width="44.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" name="NoteButtonsColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="JF2-01-NxU" firstAttribute="leading" secondItem="Qbl-uK-0Il" secondAttribute="leading" constant="13" id="47F-S4-gHF"/>
+                                    <constraint firstItem="JF2-01-NxU" firstAttribute="centerX" secondItem="2wT-MM-BvW" secondAttribute="centerX" id="pqS-Z7-PCP"/>
+                                    <constraint firstAttribute="bottom" secondItem="JF2-01-NxU" secondAttribute="bottom" constant="8.5" id="vtB-XR-H4Q"/>
+                                    <constraint firstItem="JF2-01-NxU" firstAttribute="top" secondItem="2wT-MM-BvW" secondAttribute="bottom" constant="6" id="yDv-mJ-rWl"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="EyI-a4-hwv" firstAttribute="centerY" secondItem="MrQ-KB-5Yx" secondAttribute="centerY" id="Nve-Oi-squ"/>
-                            <constraint firstItem="EyI-a4-hwv" firstAttribute="leading" secondItem="MrQ-KB-5Yx" secondAttribute="leadingMargin" id="WEo-qE-QXy"/>
-                            <constraint firstItem="EyI-a4-hwv" firstAttribute="centerX" secondItem="MrQ-KB-5Yx" secondAttribute="centerX" id="t85-ut-Ov4"/>
+                            <constraint firstItem="gaQ-vy-DIn" firstAttribute="trailing" secondItem="dUX-G5-rvQ" secondAttribute="trailing" constant="68" id="3Ij-W0-mRq"/>
+                            <constraint firstItem="Qbl-uK-0Il" firstAttribute="leading" secondItem="gaQ-vy-DIn" secondAttribute="leading" constant="174" id="4HZ-my-ptz"/>
+                            <constraint firstItem="uxA-lq-zbS" firstAttribute="baseline" secondItem="dUX-G5-rvQ" secondAttribute="baseline" id="8f3-Lp-juE"/>
+                            <constraint firstItem="E8O-p8-LKT" firstAttribute="centerX" secondItem="uxA-lq-zbS" secondAttribute="centerX" id="GuR-9T-THB"/>
+                            <constraint firstItem="VoL-2c-vOu" firstAttribute="top" secondItem="Qbl-uK-0Il" secondAttribute="bottom" constant="8" id="HLx-it-kKd"/>
+                            <constraint firstItem="uxA-lq-zbS" firstAttribute="centerX" secondItem="MrQ-KB-5Yx" secondAttribute="centerX" constant="-124" id="Huh-Xp-Nbr"/>
+                            <constraint firstItem="dUX-G5-rvQ" firstAttribute="centerX" secondItem="1VH-0V-061" secondAttribute="centerX" id="Rd1-VJ-750"/>
+                            <constraint firstItem="Qbl-uK-0Il" firstAttribute="centerX" secondItem="VoL-2c-vOu" secondAttribute="centerX" id="SaZ-iX-UfW"/>
+                            <constraint firstItem="1VH-0V-061" firstAttribute="top" secondItem="dUX-G5-rvQ" secondAttribute="bottom" constant="8" id="U3k-dK-X68"/>
+                            <constraint firstItem="E8O-p8-LKT" firstAttribute="top" secondItem="uxA-lq-zbS" secondAttribute="bottom" constant="8" id="Wh1-b0-p3n"/>
+                            <constraint firstItem="gaQ-vy-DIn" firstAttribute="bottom" secondItem="E8O-p8-LKT" secondAttribute="bottom" constant="15" id="Xkp-pf-rT5"/>
+                            <constraint firstItem="uxA-lq-zbS" firstAttribute="firstBaseline" secondItem="dUX-G5-rvQ" secondAttribute="firstBaseline" id="gtU-R5-X8L"/>
+                            <constraint firstItem="uxA-lq-zbS" firstAttribute="leading" secondItem="gaQ-vy-DIn" secondAttribute="leading" constant="71" id="mov-1z-Mfz"/>
+                            <constraint firstItem="Qbl-uK-0Il" firstAttribute="top" secondItem="gaQ-vy-DIn" secondAttribute="top" constant="2" id="qK3-yT-cOt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gaQ-vy-DIn"/>
                     </view>
@@ -602,7 +1041,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nX2-vz-ufm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3038" y="-160"/>
+            <point key="canvasLocation" x="3095.6521739130435" y="-509.59821428571428"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aDW-vu-uHd">
@@ -620,17 +1059,26 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mkK-B5-GSX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1865.217391304348" y="-28.125"/>
+            <point key="canvasLocation" x="1981" y="-569"/>
         </scene>
     </scenes>
     <resources>
         <image name="music.note.list" catalog="system" width="64" height="56"/>
         <image name="rosette" catalog="system" width="50" height="64"/>
+        <namedColor name="CUSTOMTurk">
+            <color red="0.0" green="0.99099999666213989" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Color">
+            <color red="0.99900001287460327" green="0.98600000143051147" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="HotMagenta">
+            <color red="1" green="0.25299999117851257" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="NavigationBarTextColors">
             <color red="0.80800002813339233" green="0.0" blue="0.3190000057220459" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="NavigationBarTextColors">
-            <color red="1" green="0.43075719964164749" blue="0.69968575374516195" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.80800002813339233" green="0.0" blue="0.3190000057220459" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="NoteButtonsColor">
             <color red="1" green="0.15800000727176666" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

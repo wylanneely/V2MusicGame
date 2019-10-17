@@ -6,11 +6,13 @@
 //  Copyright © 2019 Wylan L Neely. All rights reserved.
 //
 
+
+
 import Foundation
 import UIKit
 
 @IBDesignable class NoteButtonsStack: UIStackView, NibLoadable {
-
+    
     weak var delegate: NoteButtonsDelegate?
     var selectedNoteButtonIndexes: [Int] = [0,2,3,5,7,8,10]
 
@@ -27,11 +29,13 @@ import UIKit
         super.init(coder: coder)
     }
     
+    
+    
     //MARK: Updates
     
-    func updateEnabledNotes(_ withIndexes: [Int]){
+    func updateEnabledNotes(_ withIndexes: [Int]) {
         setButtonNoteStates(selectedNoteIndexes: withIndexes)
- }
+   }
     
     func setButtonNoteStates(selectedNoteIndexes:[Int]){
         var iteration = 0

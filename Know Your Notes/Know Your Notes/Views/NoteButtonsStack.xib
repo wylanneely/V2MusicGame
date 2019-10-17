@@ -356,7 +356,7 @@
                 <outlet property="gSbackgroundView" destination="c6X-qX-jk0" id="sWZ-1f-aUe"/>
                 <outlet property="gbackgroundView" destination="iYB-9q-l3e" id="Uwg-Dg-Thc"/>
             </connections>
-            <point key="canvasLocation" x="35" y="660"/>
+            <point key="canvasLocation" x="393" y="556"/>
         </stackView>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
     </objects>

@@ -6,23 +6,25 @@
 //  Copyright © 2019 Wylan L Neely. All rights reserved.
 //
 
+
 import UIKit
 
 @IBDesignable
 class XibViewController : UIView {
 
     var contentView:UIView?
-    @IBInspectable var nibName:String? = "NoteButtonsStack"
     
+    @IBInspectable var nibName: String? = "NoteButtonsStack"
     
     override func awakeFromNib() {
          super.awakeFromNib()
          xibSetup()
      }
+    
+    
 
      func xibSetup() {
          guard let view = loadViewFromNib() else { return }
-        
         view.frame = bounds
         view.autoresizingMask =
                     [.flexibleWidth, .flexibleHeight]

@@ -12,8 +12,9 @@
 import UIKit
 
 
-
 class SettingsViewController: UIViewController{
+    
+    var delegate: GameSettingsDelegate?
     
 //MARK: Properties
     
@@ -29,41 +30,26 @@ class SettingsViewController: UIViewController{
     var newGameSettings: GameSettings {
         return GameSettings(difficulty: self.difficulty, selectedNoteIndexes: self.selectedNotesIndexesForGameSession ,lifes: self.numberOfLifes, skipOk: true, skips: self.numberOfSkips, repeatsOk: true, numberOfNotes: self.numberOfNotes)
     }
-    
-    var delegate: GameSettingsDelegate?
 
-    
     lazy var noteButtons: [UIButton] = [aButton,bFButton,bButton,cSButton,
                                         cButton,dButton,eBButton,eButton,
                                         fSButton,fButton,gSButton,gButton]
-    
-    
-    
    
     var hasChanged: Bool {
         return oldGameSettings != newGameSettings
     }
-   
-    
-    
-    
-
     
     //MARK: View LifeCycles
     override func viewDidLoad() {
         super.viewDidLoad()
         setupStepperControllers()
-        
         self.oldGameSettings = settingsController.gameSettings
-        
         matchViewsToOldSettings(settingsController.gameSettings)
     }
     
-    
-    
     func matchViewsToOldSettings(_ settings: GameSettings){
         let settings = self.settingsController.gameSettings
-        //            self.currentGameSettings = settings
+        //self.currentGameSettings = settings
         self.difficulty = settings.difficulty
         self.numberOfLifes = settings.numberOfLifes
         self.numberOfSkips = settings.numberOfSkips
